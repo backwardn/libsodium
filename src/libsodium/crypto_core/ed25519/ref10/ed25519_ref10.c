@@ -961,7 +961,7 @@ ge25519_p3_add(ge25519_p3 *r, const ge25519_p3 *p, const ge25519_p3 *q)
 
 /* r = r*(2^n)+q */
 static void
-ge25519_p3_dbl_add(ge25519_p3 *r, const int n, const ge25519_p3 *q)
+ge25519_p3_dbladd(ge25519_p3 *r, const int n, const ge25519_p3 *q)
 {
     ge25519_p2   p2;
     ge25519_p1p1 p1p1;
@@ -1008,21 +1008,21 @@ ge25519_mul_l(ge25519_p3 *r, const ge25519_p3 *p)
     ge25519_p3_add(&_11110101, &_1000, &_11101101);
 
     ge25519_p3_add(r, &_1011, &_11110101);
-    ge25519_p3_dbl_add(r, 126, &_1010011);
-    ge25519_p3_dbl_add(r, 9, &_10);
+    ge25519_p3_dbladd(r, 126, &_1010011);
+    ge25519_p3_dbladd(r, 9, &_10);
     ge25519_p3_add(r, r, &_11110101);
-    ge25519_p3_dbl_add(r, 7, &_1100111);
-    ge25519_p3_dbl_add(r, 9, &_11110101);
-    ge25519_p3_dbl_add(r, 11, &_10111101);
-    ge25519_p3_dbl_add(r, 8, &_11100111);
-    ge25519_p3_dbl_add(r, 9, &_1101011);
-    ge25519_p3_dbl_add(r, 6, &_1011);
-    ge25519_p3_dbl_add(r, 14, &_10010011);
-    ge25519_p3_dbl_add(r, 10, &_1100011);
-    ge25519_p3_dbl_add(r, 9, &_10010111);
-    ge25519_p3_dbl_add(r, 10, &_11110101);
-    ge25519_p3_dbl_add(r, 8, &_11010011);
-    ge25519_p3_dbl_add(r, 8, &_11101101);
+    ge25519_p3_dbladd(r, 7, &_1100111);
+    ge25519_p3_dbladd(r, 9, &_11110101);
+    ge25519_p3_dbladd(r, 11, &_10111101);
+    ge25519_p3_dbladd(r, 8, &_11100111);
+    ge25519_p3_dbladd(r, 9, &_1101011);
+    ge25519_p3_dbladd(r, 6, &_1011);
+    ge25519_p3_dbladd(r, 14, &_10010011);
+    ge25519_p3_dbladd(r, 10, &_1100011);
+    ge25519_p3_dbladd(r, 9, &_10010111);
+    ge25519_p3_dbladd(r, 10, &_11110101);
+    ge25519_p3_dbladd(r, 8, &_11010011);
+    ge25519_p3_dbladd(r, 8, &_11101101);
 }
 
 int
